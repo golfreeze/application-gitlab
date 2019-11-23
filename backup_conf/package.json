@@ -1,0 +1,36 @@
+{
+  "name": "application-gitlab",
+  "version": "1.0.0",
+  "description": "application-gitlab",
+  "main": "index.js",
+  "scripts": {
+    "test": "Check Mobile",
+    "build": "babel src -d dist --copy-files",
+    "test:build": "mocha dist/tests",
+    "test:unit": "mocha --compilers js:babel-core/register src/tests",
+    "start": "node dist/functions/mobileNo.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/golfreeze/application-gitlab.git"
+  },
+  "keywords": [
+    "application-gitlab"
+  ],
+  "author": "golfreeze",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/golfreeze/application-gitlab/issues"
+  },
+  "homepage": "https://github.com/golfreeze/application-gitlab#readme",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "chai": "^4.2.0",
+    "mocha": "^6.2.2"
+  },
+  "dependencies": {
+    "babel-register": "^6.26.0"
+  }
+}

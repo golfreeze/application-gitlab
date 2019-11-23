@@ -1,0 +1,40 @@
+image: node:13
+
+before_script:
+  - yarn install
+  
+cache:
+  paths:
+    - node_modules/
+
+stages:
+  - test:unit
+  - build
+  - test:build
+  - deploy
+
+unit_test:
+  stage: test:unit
+  script:
+    - yarn test:unit
+
+build:
+  stage: build
+  script:
+    - yarn build
+
+build_test:
+  stage: test:build
+  script:
+    - yarn test:build   
+
+deploy_code:
+  stage: deploy
+  only:
+    - master
+  script:
+    - echo 'command deploy here.'
+
+
+after_script:
+    - echo 'after script here.
